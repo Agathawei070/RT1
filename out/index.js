@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var empresa_1 = require("./empresa");
+var endereco_1 = require("./endereco");
+var funcionario_1 = require("./funcionario");
+var telefone_1 = require("./telefone");
+var enderecoEmpresa = new endereco_1.Endereco(123, "Av. satelite", "Jardim P", "São jose dos campos");
+var telefoneFuncionario = new telefone_1.Telefone("011", "9-9999-9999");
+var enderecoFuncionario = new endereco_1.Endereco(123, "Av. margarida", "Jardim industrial", "São jose dos campos");
+var funcionario = new funcionario_1.Funcionario("Agatha wei ", "12981613594", "999.999.999-99", enderecoFuncionario, telefoneFuncionario);
+var empresa = new empresa_1.Empresa([funcionario], enderecoEmpresa, "WEI", "Mercado Online", "999-999-999-999-99");
+console.log(empresa.toString());
