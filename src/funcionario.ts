@@ -1,16 +1,20 @@
-import { Endereco } from "./endereco";
-import { Telefone } from "./telefone";
+import Endereco from "./endereco";
+import Telefone from "./telefone";
 
-export class Funcionario {
-    constructor(
-        public nome: string,
-        public matricula: string,
-        public cpf: string,
-        public endereco: Endereco,
-        public telefone: Telefone
-    ) {}
+class Funcionario {
+  nome: string;
+  matricula: string;  // Adicionado
+  cpf: string;
+  endereco: Endereco;
+  telefone: Telefone;
 
-    public toString(): string {
-        return `Nome: ${this.nome}\nMatricula: ${this.matricula}\nCPF: ${this.cpf}\n${this.endereco.toString()}`;
-    }
+  constructor(nome: string, matricula: string, cpf: string, endereco: Endereco, telefone: Telefone) {
+    this.nome = nome;
+    this.matricula = matricula;  // Atribuindo o valor ao novo atributo
+    this.cpf = cpf;
+    this.endereco = endereco;
+    this.telefone = telefone;
+  }
 }
+
+export default Funcionario;

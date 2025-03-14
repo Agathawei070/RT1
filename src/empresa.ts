@@ -1,17 +1,21 @@
-import { Endereco } from "./endereco";
-import { Funcionario } from "./funcionario";
+import Endereco from "./endereco";
+import Funcionario from "./funcionario";
 
-export class Empresa {
-    constructor(
-        public funcionarios: Funcionario[],
-        public endereco: Endereco,
-        public razaoSocial: string,
-        public nomeFantasia: string,
-        public cnpj: string
-    ) {}
+class Empresa {
+  razaoSocial: string;  // Adicionado
+  nomeFantasia: string; // Alterado de "nome" para "nomeFantasia"
+  cnpj: string;
+  endereco: Endereco;
+  funcionarios: Funcionario[];
 
-    public toString(): string {
-        let funcionariosStr = this.funcionarios.map(f => f.toString()).join("\n\n");
-        return `Razão Social: ${this.razaoSocial}\nNome Fantasia: ${this.nomeFantasia}\nCNPJ: ${this.cnpj}\nEndereco:\n${this.endereco.toString()}\n\nFuncionários:\n${funcionariosStr}`;
-    }
+  constructor(razaoSocial: string, nomeFantasia: string, cnpj: string, endereco: Endereco, funcionarios: Funcionario[]) {
+    this.razaoSocial = razaoSocial;
+    this.nomeFantasia = nomeFantasia;
+    this.cnpj = cnpj;
+    this.endereco = endereco;
+    this.funcionarios = funcionarios;
+  }
 }
+
+export default Empresa;
+

@@ -1,10 +1,12 @@
-export class Telefone {
-    constructor(
-        public ddd: string,
-        public numero: string
-    ) {}
-
-    public toString(): string {
-        return `(${this.ddd}) ${this.numero}`;
+class Telefone {
+    ddd: string;
+    numero: string;
+  
+    constructor(ddd: string, numero: string) {
+      this.ddd = ddd;
+      this.numero = numero;
     }
-}
+  }
+  
+  export default Telefone;
+  
